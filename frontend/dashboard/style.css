@@ -33,8 +33,8 @@
     /* ? Paleta de Colores */
     --color-primario: #36f174;
     --color-danger: #ff7782;
-    --color-succes: #36f174;
-    --color-warnign: #ffbb55;
+    --color-succes: #46da78;
+    --color-warnign: #ffe855;
     --color-white: #fff;
     --color-info-dark: #7d8da1;
     --color-info-ligth: #dce1eb;
@@ -53,6 +53,16 @@
 
     /* ? Sombra de caja */
     --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* * VARIABLES DE MODO OSCURO */
+.modo-oscuro-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-variant-dark: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light); 
 }
 
 * {
@@ -75,7 +85,7 @@ body {
     height: 100vh;
     font-family: 'Source Code Pro', monospace;
     font-size: 0.88rem;
-    background: #f6f6f9;
+    background: var(--color-white);
     user-select: none;
     overflow-x: hidden;
     color: var(--color-dark);
@@ -84,7 +94,7 @@ body {
 /* * Contenedor de las secciones de la web */
 .container {
     display: grid;
-    width:98%;
+    width: 98%;
     margin: 0 auto;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
@@ -134,6 +144,7 @@ small {
 
 .text-muted {
     color: var(--color-info-dark);
+
 }
 
 p {
@@ -169,7 +180,7 @@ aside {
 }
 
 aside .top {
-    background: white;
+    /* background: white; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -195,7 +206,7 @@ aside .close {
 aside .sidebar {
     display: flex;
     flex-direction: column;
-    height: 86vh;
+    height: 82vh;
     position: relative;
     top: 3rem;
 }
@@ -228,8 +239,8 @@ aside .sidebar a:last-child {
 }
 
 /* ? Indicador de la seccion en la que se encuentra */
-aside .sidebar a.active{
-    background: var(--color-info-ligth);
+aside .sidebar a.active {
+    background: var(--color-light);
     margin-left: 0;
 }
 
@@ -282,6 +293,18 @@ main {
     margin-top: 1.4rem;
 }
 
+main .titlo-tesis {
+    padding: 1rem 0 1rem 1rem;
+    color: var(--color-primario);
+    text-align: center  ;
+}
+
+main .title-tesista {
+    text-align: center  ;
+    padding: 0 0 1rem 1rem;
+    font-size: 1rem;
+}
+
 /* ? Parte donde se visualizara la fecha */
 main .date {
     display: inline-block;
@@ -294,4 +317,407 @@ main .date {
 main .date input[type='date'] {
     background: transparent;
     color: var(--color-dark);
+}
+
+main .estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .estadisticas>div {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .estadisticas>div:hover {
+    box-shadow: none;
+}
+
+main .estadisticas>div span {
+    background: var(--color-primario);
+    padding: .5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+main .estadisticas>div.statusnotas span {
+    background: var(--color-warnign);
+}
+
+main .estadisticas>div.statusplagio span {
+    background: var(--color-danger);
+}
+
+main .estadisticas>div .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .estadisticas>div h3 {
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+main .estadisticas .progreso {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .estadisticas svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+/* * CIRCULO DE ESTADISTACAS  */
+main .estadisticas svg circle {
+    fill: none;
+    stroke: var(--color-primario);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+main .estadisticas .statustesis svg circle {
+    stroke-dashoffset: -50;
+    stroke-dasharray: 100;
+}
+
+main .estadisticas .statusnotas svg circle {
+    stroke: var(--color-warnign);
+    stroke-dashoffset: -50;
+    stroke-dasharray: 100;
+}
+
+main .estadisticas .statusplagio svg circle {
+    stroke: var(--color-danger);
+    stroke-dashoffset: -50;
+    stroke-dasharray: 100;
+}
+
+/* * NUMERO DE LAS ESTADISCTICAS */
+main .estadisticas .progreso .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* * TIEMPO CUANDO FUE */
+main .estadisticas small {
+    margin-top: 1.3rem;
+    display: block;
+}
+
+/* * TABLA DE TESIS SUBIDAS */
+main .archivos-update {
+    margin-top: 2rem;
+}
+
+main .archivos-update h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .archivos-update table {
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transform: all 300ms ease;
+}
+
+main .archivos-update table:hover {
+    box-shadow: none;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-info-dark);
+    color: var(--color-dark);
+}
+
+main table tbody tr:last-child td {
+    border: none;
+}
+
+main .archivos-update a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primario);
+}
+
+/* * TERCERA SECCION */
+.right {
+    margin-top: 1.4rem;
+    /* * Por Mientras */
+    margin-right: 2rem;
+}
+
+.right .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display: none;
+}
+
+/* ? Modo noche/dia */
+.right .modo-visualizador {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right .modo-visualizador span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .modo-visualizador span.active {
+    background: var(--color-primario);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.right .top .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/* * ULTIMOS MENSAJES */
+
+.right .recientes-update {
+    margin-top: 1rem;
+}
+
+.right .recientes-update h2 {
+    margin-bottom: 0.8rem;
+}
+
+.right .recientes-update .updates {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .recientes-update .updates:hover {
+    box-shadow: none;
+}
+
+.right .recientes-update .updates .update-sola {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* * RESPONSIVE MEDIDAS 1 */
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .logo h2 {
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 5rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .estadisticas {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .archivos-update {
+        width: 80%;
+        position: absolute;
+        left: 43%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+
+    main .archivos-update table {
+        width: 83vw;
+    }
+
+    main table thead tr th:last-child,
+    main table thead tr th:first-child {
+        display: none;
+    }
+
+    main table body td th:last-child,
+    main table body td th:first-child {
+        display: none;
+    }
+}
+
+/* * RESPONSIVE MEDIDAS 2 */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        position: fixed;
+        left: -100%;
+        background: var(--color-white);
+        width: 18rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 300ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+    }
+
+    aside .logo {
+        margin-left: 1rem;
+        margin-right: 1.5rem;
+
+    }
+
+
+    aside .logo h2 {
+        display: inline;
+    }
+
+    aside .sidebar h3 {
+        display: inline;
+    }
+
+    aside .sidebar a {
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    aside .close {
+        display: inline-block;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+
+    aside .close:hover {
+        color: #36f174;
+        /* transition: none; */
+    }
+
+    main {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    main .archivos-update {
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+        padding-left: 4rem;
+        padding-right: -10rem;
+    }
+
+    main .archivos-update table {
+        width: 100%;
+        margin: 0;
+    }
+
+    .right {
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .right .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: var(--color-white);
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+
+    .right .top .modo-visualizador {
+        width: 4.4rem;
+        position: absolute;
+        left: 80%;
+    }
+
+    /* ! TOMAR EN CUENTA O BORRAR */
+    .right .profile .info {
+        display: none;
+    }
+
+    .right .top button {
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+        transition: all 300ms ease;
+    }
+
+    .right .top button:hover {
+        color: var(--color-succes);
+    }
+
+    .right .top button span {
+        font-size: 2rem;
+    }    
 }

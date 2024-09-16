@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="frontend/img/logoFondoRedondo.png">
+    <link rel="stylesheet" href="frontend/dashboard/style.css">
+
+    <!-- ?  MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <title>GLOBTECx-</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="frontend/img/logoSinTexto.png" alt="">
+                    <h2>GLOB<span class="span-txtlogo">TEC</span><span class="span-x-">x-</span></h2>
+                </div>
+
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <!-- * Sidebar -->
+            <div class="sidebar">
+
+                <!-- ? Btn Incio -->
+                <a href="index.html" class="active">
+                    <span class="material-icons-sharp">home</span>
+                    <h3>Incio</h3>
+                </a>
+
+                <!-- ? Btn User -->
+                <a href="frontend/dashboard/user.html">
+                    <span class="material-icons-sharp">account_circle</span>
+                    <h3>Yber-M</h3>
+                </a>
+
+                <!-- ? Btn Doc -->
+                <a href="frontend/dashboard/tesis.html">
+                    <span class="material-icons-sharp">history_edu</span>
+                    <h3>Tesis</h3>
+                </a>
+
+                <!-- ? Btn Mensaje -->
+                <a href="#">
+                    <span class="material-icons-sharp">question_answer</span>
+                    <h3>Mensajes</h3>
+                    <span class="msg-count">8</span>
+                </a>
+
+                <!-- ? Btn Correciones -->
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Correciones</h3>
+                </a>
+
+                <!-- ? Herramientas -->
+                <a href="#">
+                    <span class="material-icons-sharp">tune</span>
+                    <h3>Herramientas</h3>
+                </a>
+
+                <!-- ? Cerrar Sesion -->
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Cerrar Sesión</h3>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+
+            <!-- * Input Fecha -->
+            <div class="date">
+                <span>Buscar por fecha:</span>
+                <input type="date">
+            </div>
+
+            <!-- * TITULO DE TESIS -->
+            <h1 class="titlo-tesis">Titulo de Tesis</h1>
+
+            <!-- ? TEXTO DEL TITULO DE LA TESIS -->
+            <div class="title-tesista">
+                "TECx-: Desarrollo de un Sistema Inteligente de Apoyo para la
+                Elaboracion de Tesis"
+            </div>
+
+            <!-- <h1>Resúmen</h1> -->
+
+            <!-- * Seccion de las estadisticas -->
+            <div class="estadisticas">
+
+                <!-- ? Estado de tesis -->
+                <div class="statustesis">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Tésis Actual</h3>
+                            <!-- <h1>18</h1> -->
+                            <h1>En Proceso</h1>
+                        </div>
+                        <div class="progreso">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+
+                            <div class="number">
+                                <p>45%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Actualizado hace 28d</small>
+                </div>
+
+                <!-- ? Notas -->
+                <div class="statusnotas">
+                    <span class="material-icons-sharp">stars</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Notas</h3>
+                            <h1>12/20</h1>
+                            <!-- <h1>Completado</h1> -->
+                        </div>
+                        <div class="progreso">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+
+                            <div class="number">
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Actualizado hace 4h</small>
+                </div>
+
+                <!-- ? Plagio -->
+                <div class="statusplagio">
+                    <span class="material-icons-sharp">warning</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Antiplagio</h3>
+                            <h1>Similitud</h1>
+                            <!-- <h1>Completado</h1> -->
+                        </div>
+                        <div class="progreso">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Actualizado hace 3h</small>
+                </div>
+            </div>
+
+            <!-- * TABLA De Archivos Subidos-->
+            <div class="archivos-update">
+                <h2>Archivos Cargados</h2>
+                <table class="tabla-archiv">
+                    <!-- ? CABECERA de la tabla -->
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Titulo de la tesis</th>
+                            <th>Fecha de Subida</th>
+                            <th>Fecha de Culminación</th>
+                            <th>Antiplagio</th>
+                            <th>Linea de investigación</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <!-- ? Aca se mostrara la informacion -->
+                    <tbody>
+
+                </table>
+
+                <!-- ? Mostrar más -->
+                <b><a href=""> Mostrar más</a></b>
+            </div>
+        </main>
+
+        <!-- * TERCERA SECCION -->
+        <div class="right">
+            <div class="top">
+
+                <!-- ? Menu -->
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+
+                <!-- ? Tema Dark-Light  -->
+                <div class="modo-visualizador">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <!-- ? Texto Hola <user>-->
+                <div class="profile">
+                    <div class="info">
+                        <p>Hola!, <b>Yber-M</b> </p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                </div>
+
+                <!-- ? Foto de Usuario -->
+                <div class="perfil-foto" style="width: 32px;">
+                    <img src="frontend/dashboard/img/perfil-foto.png" alt="user-img">
+                </div>
+            </div>
+            <!-- * NUEVAS ACTUALIZACIONES -->
+            <div class="recientes-update">
+                <h2>Mensajes</h2>
+
+                <!-- ? Seccion de Actualizaciones -->
+                <div class="updates">
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilRios.jpg" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>Mgtr. Josue Rios</b> <br> Tienes errores que debes corregir que según tu índice es
+                                el
+                                2.1</p>
+                            <small class="text-muted">Hace 1 día</small>
+                        </div>
+                    </div>
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilRios.jpg" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>Mgtr. Josue Rios</b> <br>El nivel de similitud marca 44%, te recomiendo que
+                                verifiques
+                                y corrijas las citas. </p>
+                            <small class="text-muted">Hace 2 día</small>
+                        </div>
+                    </div>
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilJesus.png" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>Mgtr. Jesus Esquives</b><br> Los margenes no están configurados adecuadamente con el
+                                formato de APA 7</p>
+                            <small class="text-muted">Hace 1 semana</small>
+                        </div>
+                    </div>
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilBot.png" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>TECX-BOT</b> <br>Hola soy TECx-, soy una IA que está aquí para ayudarte, no dudes en
+                                consultarme cualquier duda.</p>
+                            <small class="text-muted">Hace 1 semana</small>
+                        </div>
+                    </div>
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilRudy.jpg" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>Dr. Rudy Chapoñan</b> <br>te deseo los mejores exitos en la elaboración de tu
+                                tesis.
+                                ¡No te rindas!</p>
+                            <small class="text-muted">Hace 4 meses</small>
+                        </div>
+                    </div>
+
+                    <!-- ? Actualizacion Por Persona  -->
+                    <div class="update-sola">
+
+                        <!-- ? Immagen de Persona -->
+                        <div class="foto-update">
+                            <img src="frontend/dashboard/img/fotoPerfilRudy.jpg" alt="">
+                        </div>
+
+                        <div class="mensaje-update">
+                            <p><b>Dr. Rudy Chapoñan</b> <br>Bienvenido a la herramiento GLOBTECx-
+                                te ayudará mucho en el desarrolo de tu tesis.</p>
+                            <small class="text-muted">Hace 4 meses</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="frontend/dashboard/tesisUpdate.js"></script>
+    <script src="frontend/dashboard/script.js"></script>
+</body>
+
+</html>
